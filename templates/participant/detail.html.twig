@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <title>{% block title %}Créer le profil{% endblock %}</title>
+</head>
+<body>
+<header>
+
+</header>
+
+{# read and display all flash messages #}
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="flash flash-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+<main>
+    {% block body %}
+        <div class="container">
+            <h1>Mon profile</h1>
+        </div>
+
+        <div>
+            <p>Afficher les infos du profile</p>
+
+        </div>
+
+    {% endblock %}
+</main>
+</body>
+</html>

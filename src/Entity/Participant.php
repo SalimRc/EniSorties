@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=ParticipantRepository::class)
  */
-class Utilisateur
+class Participant
 {
     /**
      * @ORM\Id
@@ -65,7 +65,7 @@ class Utilisateur
     private $actif;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Campus::class, inversedBy="Utilisateur")
+     * @ORM\ManyToOne(targetEntity=Campus::class, inversedBy="Participant")
      * @ORM\JoinColumn(nullable=false)
      */
     private $campus_p_r;
@@ -76,7 +76,7 @@ class Utilisateur
     private $Sortie;
 
     /**
-     * @ORM\OneToMany(targetEntity=Sortie::class, mappedBy="Utilisateur")
+     * @ORM\OneToMany(targetEntity=Sortie::class, mappedBy="Participant")
      */
     private $sorties;
 
