@@ -64,3 +64,27 @@ input, textarea, select{
 }
 
 .flash-success {color: mediumslateblue}
+
+.button {
+    background-color: #1c87c9;
+    border: none;
+    color: white;
+    padding: 20px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.navbar {
+    height: auto;
+    width: 135.8px;
+    float: left;
+    text-align: center;
+    list-style: none;
+    font: normal bold 13px/1em Arial, Verdana, Helvetica;
+    padding: 0;
+    margin: 0;
+    background-color: #444444;
+}

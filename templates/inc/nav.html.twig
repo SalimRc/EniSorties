@@ -1,18 +1,52 @@
-<nav>
-    <ul>
-        <li><a href="#" title="Villes">Villes</a></li>
-        <li><a href="#" title="Campus">Campus</a></li>
-        <li><a href="{{ path('main_home') }}" title="Accueil">Accueil</a></li>
-        <li><a href="#" title="profile">Mon profil</a></li>
-        {% if app.user %}
-            <li><a href="#">Create</a></li>
+    <!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
 
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="{{  path('main_home') }}">EniSorties</a>
 
-            {% if is_granted("ROLE_ADMIN") %}
-                <li><a href="#">Admin</a></li>
-            {% endif %}
-        {% else %}
-            <li><a href="#">Logout</a></li>
-        {% endif %}
-    </ul>
-</nav>
+    <!-- Collapse button -->
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarColor01">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    {% if  is_granted("ROLE_ADMIN") %}
+                        <a class="nav-link" href="{{  path('ville') }}">Villes</a>
+                        <span class="sr-only">(current)</span>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <a class="nav-link" href="{{  path('campus') }}">Campus</a>
+                    {% endif %}
+                </li>
+
+                <li class="nav-item">
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <a class="nav-link" href="{{  path('campus') }}">Gestion des utilisateurs</a>
+                    {% endif %}
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{  path('main_home') }}" >Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{  path('participant_') }}"> Mes sorties</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{  path('participant_') }}"> Mon profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{  path('participant_') }}"> Déconnexion </a>
+                </li>
+            </ul>
+        </div>
+    <!-- Collapsible content -->
+    </nav>
+

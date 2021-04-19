@@ -3,8 +3,9 @@
 
 namespace App\Controller;
 
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
@@ -22,6 +23,7 @@ class MainController extends AbstractController
      */
     public function test()
     {
-       return $this->render('main/test.html.twig');
+       return $this->render('main/home.html.twig');
     }
 }
+
