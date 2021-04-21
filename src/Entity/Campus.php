@@ -69,7 +69,7 @@ class Campus
     {
         if (!$this->Sortie->contains($sortie)) {
             $this->Sortie[] = $sortie;
-            $sortie->setCampusR($this);
+            $sortie->setCampus($this);
         }
 
         return $this;
@@ -79,8 +79,8 @@ class Campus
     {
         if ($this->Sortie->removeElement($sortie)) {
             // set the owning side to null (unless already changed)
-            if ($sortie->getCampusR() === $this) {
-                $sortie->setCampusR(null);
+            if ($sortie->getCampus() === $this) {
+                $sortie->setCampus(null);
             }
         }
 
@@ -99,7 +99,7 @@ class Campus
     {
         if (!$this->Participant->contains($participant)) {
             $this->Participant[] = $participant;
-            $participant->setCampusPR($this);
+            $participant->setCampus($this);
         }
 
         return $this;
@@ -109,8 +109,8 @@ class Campus
     {
         if ($this->Participant->removeElement($participant)) {
             // set the owning side to null (unless already changed)
-            if ($participant->getCampusPR() === $this) {
-                $participant->setCampusPR(null);
+            if ($participant->getCampus() === $this) {
+                $participant->setCampus(null);
             }
         }
 

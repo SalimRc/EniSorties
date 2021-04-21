@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
 
-{% block body %}<h1>Sortons avec Eni</h1>{% endblock %}
+{% block body %}<h1>Sortons avec Eni</h1>
+<div>
+<a href="{{ path('createSortie') }}">Créer une sortie</a>
+</div>
+{% endblock %}
 
 {% block title %} {{ parent() }} | Home {% endblock %}

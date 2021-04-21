@@ -19,10 +19,10 @@ class VilleRepository extends ServiceEntityRepository
         parent::__construct($registry, Ville::class);
     }
 
-    // /**
+     /**
     //  * @return Ville[] Returns an array of Ville objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('v')
@@ -34,9 +34,7 @@ class VilleRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
 
-    /*
     public function findOneBySomeField($value): ?Ville
     {
         return $this->createQueryBuilder('v')
@@ -46,5 +44,5 @@ class VilleRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+
 }

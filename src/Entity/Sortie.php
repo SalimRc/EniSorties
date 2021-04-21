@@ -28,7 +28,7 @@ class Sortie
     private $dateHeureDebut;
 
     /**
-     * @ORM\Column(type="dateinterval")
+     * @ORM\Column(type="integer")
      */
     private $duree;
 
@@ -62,19 +62,28 @@ class Sortie
      * @ORM\ManyToOne(targetEntity=Lieu::class, inversedBy="Sortie")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $lieux;
+    private $lieu;
 
     /**
      * @ORM\ManyToOne(targetEntity=Campus::class, inversedBy="Sortie")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $campus_r;
+
+
+    private $campus;
 
     /**
      * @ORM\ManyToOne(targetEntity=Participant::class, inversedBy="sorties")
      * @ORM\JoinColumn(nullable=false)
      */
     private $Participant;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Location::class,cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $Location;
+
 
     public function getId(): ?int
     {
@@ -105,12 +114,12 @@ class Sortie
         return $this;
     }
 
-    public function getDuree(): ?\DateInterval
+    public function getDuree(): ?int
     {
         return $this->duree;
     }
 
-    public function setDuree(\DateInterval $duree): self
+    public function setDuree(Int $duree): self
     {
         $this->duree = $duree;
 
@@ -177,26 +186,26 @@ class Sortie
         return $this;
     }
 
-    public function getLieux(): ?Lieu
+    public function getLieu(): ?Lieu
     {
-        return $this->lieux;
+        return $this->lieu;
     }
 
-    public function setLieux(?Lieu $lieux): self
+    public function setLieu(?Lieu $lieu): self
     {
-        $this->lieux = $lieux;
+        $this->lieu = $lieu;
 
         return $this;
     }
 
-    public function getCampusR(): ?Campus
+    public function getCampus(): ?Campus
     {
-        return $this->campus_r;
+        return $this->campus;
     }
 
-    public function setCampusR(?Campus $campus_r): self
+    public function setCampus(?Campus $campus): self
     {
-        $this->campus_r = $campus_r;
+        $this->campus = $campus;
 
         return $this;
     }
@@ -212,4 +221,18 @@ class Sortie
 
         return $this;
     }
+
+    public function getLocation(): ?Location
+    {
+        return $this->Location;
+    }
+
+    public function setLocation(?Location $Location): self
+    {
+        $this->Location = $Location;
+
+        return $this;
+    }
+
+
 }
