@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfilController!{% endblock %}
+
+{% block body %}
+    {{ form_start(profileForm) }}
+    {{ form_widget(profileForm)  }}
+
+
+
+    <button type="submit">Enregistrer</button>
+
+    <a href="{{  path('main_home') }}" class="btn btn-primary btn- btn-block">Annuler</a>
+
+    {{ form_end(profileForm) }}
+
+{% endblock %}

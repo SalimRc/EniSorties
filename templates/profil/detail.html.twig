@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Mon profil {{ utilisateur.nom }} {{ utilisateur.prenom }}</h2>
+    <div>Campus : {{ utilisateur.campus.nom }}</div>
+
+    {% if app.user == user %}
+        <a href="{{ path('modifier_mon_profil') }}">Modifier mon profil</a><br>
+
+    {% endif %}
+{% endblock %}
+
+{% block title %}Profil de {{ user.firstname }} {{ user.lastname }}{% endblock %}
