@@ -79,10 +79,10 @@ class Sortie
     private $Participant;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Location::class,cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity=Location::class,inversedBy="Sortie",cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
-    private $Location;
+    private  $Location;
 
 
     public function getId(): ?int

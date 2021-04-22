@@ -50,7 +50,7 @@ class SortieController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('success', 'Evènement crée !');
-            return $this->redirectToRoute('afficherSortie', ['id' => $sortie->getId()]);
+            return $this->redirectToRoute('main_home', ['id' => $sortie->getId()]);
 
         }
 

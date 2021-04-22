@@ -14,6 +14,8 @@ class Location
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @ORM\OneToMany (targetEntity=Sortie::class, mappedBy="Location")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $id;
 
